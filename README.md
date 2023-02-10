@@ -1,7 +1,7 @@
-# PG_Google_Maps
+# <h1 align=center> PG_Google_Maps
 Proyecto Grupal
 
-## Proyecto en Ejecución.
+## <h1 align=center> Proyecto en Ejecución.
 
 Primer Dataset generado: metadata-sitios.parquet
 
