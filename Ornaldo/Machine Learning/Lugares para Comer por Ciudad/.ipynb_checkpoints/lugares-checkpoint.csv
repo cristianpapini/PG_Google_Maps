@@ -1011,6 +1011,7 @@ PORT CHARLOTTE,Fusion Studios,"Fusion Studios, 24123 Peachland Blvd, Port Charlo
 BROOKSVILLE,Jimmy John's,"Jimmy John's, 13211 Cortez Blvd, Brooksville, FL 34613",28.53125,-82.5,Sandwich shopCatererFast food restaurantDelivery RestaurantTakeout Restaurant,0,4,158
 BRADENTON,Subway,"Subway, 1755 Lakewood Ranch Blvd Unit No.3, Bradenton, FL 34211",27.484375,-82.4375,Sandwich shopCatererFast food restaurantTakeout RestaurantRestaurant,0,3,48
 OCOEE,Subway,"Subway, 1501-1619 E Silver Star Rd Suite 11, Ocoee, FL 34761",28.578125,-81.5,Sandwich shopCatererFast food restaurantTakeout RestaurantRestaurant,0,4,93
+ODESSA,China Chef,"Florida, Odessa, FL-54, China Chef邮政编码: 33556",28.1875,-82.625,Mandarin restaurant,0,4,97
 SPRING HILL,Cali Street Tacos,"Cali Street Tacos, 11175 Spring Hill Dr, Spring Hill, FL 34609",28.46875,-82.5625,Mexican restaurant,0,4,48
 PORT SAINT LUCIE,Subway,"Subway, 640 SE Becker Rd, Port St. Lucie, FL 34983",27.203125,-80.3125,Sandwich shopCatererFast food restaurantTakeout RestaurantRestaurant,0,3,77
 PORT SAINT LUCIE,Tropical Smoothie Cafe,"Tropical Smoothie Cafe, 6632 S Federal Hwy, Port St. Lucie, FL 34952",27.34375,-80.3125,RestaurantJuice shop,0,3,108
@@ -1240,6 +1241,7 @@ KISSIMMEE,Wingstop,"Wingstop, 7589 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34
 MIAMI,Wendy's,"Wendy's, Terminal D, 2100 NW 42nd Ave, Miami, FL 33126",25.796875,-80.25,Fast food restaurantHamburger restaurant,0,3,8
 MIAMI,Lakeside Cafe,"Lakeside Cafe, 10901 Old Cutler Rd, Coral Gables, FL 33156",25.671875,-80.25,American restaurant,0,4,18
 HIALEAH,BurgerIM,"BurgerIM, 6704 Main St, Miami Lakes, FL 33014",25.90625,-80.3125,Hamburger restaurant,0,3,18
+WEST PALM BEACH,China Taste,"Florida, West Palm Beach, Okeechobee Blvd, China Taste邮政编码: 33411",26.703125,-80.1875,Wok restaurant,0,3,8
 HOMOSASSA,Wendy's,"Wendy's, 7230 W Miss Maggie Dr, Homosassa, FL 34448",28.71875,-82.5625,Fast food restaurantBreakfast restaurant,0,3,13
 ORMOND BEACH,The Crepevine,"The Crepevine, 247 E Granada Blvd, Ormond Beach, FL 32176",29.296875,-81.0625,Restaurant,0,4,14
 JACKSONVILLE,Subway,"Subway, 4501 Capper Road, N Campus Blvd Building E, Jacksonville, FL 32218",30.421875,-81.6875,Sandwich shopCatererFast food restaurantTakeout RestaurantRestaurant,0,3,4
@@ -1404,6 +1406,7 @@ TAMPA,Domino's Pizza,"Domino's Pizza, 1702 N 50th St, Tampa, FL 33619",27.953125
 BELLE GLADE,Town Star,"Town Star, 940 S Main St, Belle Glade, FL 33430",26.671875,-80.6875,Fast food restaurant,0,4,1
 DAVENPORT,Olive Garden Italian Restaurant,"Olive Garden Italian Restaurant, 8065 Osceola Polk Line Rd, Davenport, FL 33896",28.265625,-81.625,Italian restaurantCatererFamily restaurantGluten-free restaurantTakeout RestaurantMediterranean restaurantSeafood restaurantSoup restaurantWine bar,0,4,76
 MARCO ISLAND,Tropical Smoothie Cafe,"Tropical Smoothie Cafe, 1093 N Collier Blvd, Marco Island, FL 34145",25.953125,-81.75,RestaurantJuice shop,0,4,28
+SEMINOLE,China Garden,"Florida, Seminole, Park Blvd N, China Garden邮政编码: 33772",27.84375,-82.8125,Rice restaurant,0,4,24
 NEWBERRY,Local Provisions,"Local Provisions, 13005 SW 1 Rd #129, Newberry, FL 32669",29.65625,-82.5,Restaurant,0,4,34
 MIAMI,Domino's Pizza,"Domino's Pizza, 5769 NW 7th St Ste 22, Miami, FL 33126",25.78125,-80.3125,Pizza deliveryDelivery RestaurantTakeout RestaurantPizza restaurantPizza Takeout,0,2,27
 PALM COAST,Red Crab - Juicy Seafood,"Red Crab - Juicy Seafood, 60 Garden St S, Palm Coast, FL 32137",29.546875,-81.25,Seafood restaurant,0,4,28
@@ -2206,6 +2209,7 @@ TAMPA,Kipos,"Kipos, 1910 N Ola Ave, Tampa, FL 33602",27.96875,-82.4375,Greek res
 OCALA,Chicken Salad Chick,"Chicken Salad Chick, 4720 SW College Rd, Ocala, FL 34473",29.140625,-82.1875,Southern restaurant (US),0,4,98
 TRENTON,Hungry Howie's Pizza,"Hungry Howie's Pizza, 414 W Wade St, Trenton, FL 32693",29.609375,-82.8125,Pizza restaurantCatererItalian restaurantPizza deliveryPizza TakeoutRestaurantSalad shopSandwich shop,0,3,106
 ORLANDO,Einstein Bros. Bagels,"Einstein Bros. Bagels, 12744 Pegasus Drive Business Administration Building, Orlando, FL 32816",28.59375,-81.1875,Bagel shopBakeryBreakfast restaurantCafeCoffee shop,0,3,44
+DAYTONA BEACH,Hibachi Grill & Supreme Buffet,"United States, Florida, Daytona Beach, W International Speedway Blvd, Hibachi Grill & Supreme Buffet邮政编码: 32114",29.203125,-81.0625,Buffet restaurantChinese restaurantJapanese restaurantRestaurantSeafood restaurant,0,4,4269
 BRADENTON,Marco's Pizza,"Marco's Pizza, 11161 E State Rd 70 Ste 104, Lakewood Ranch, FL 34202",27.4375,-82.4375,Pizza restaurantTakeout RestaurantPizza deliveryPizza Takeout,0,4,38
 MIAMI,Ike's Love & Sandwiches,"Ike's Love & Sandwiches, 18719 Biscayne Blvd # 310, Aventura, FL 33180",25.953125,-80.125,Sandwich shopDeliFast food restaurantRestaurantVegan restaurantVegetarian restaurant,0,3,48
 JACKSONVILLE,Subway,"Subway, 3604 Mayport Rd Bldg 1397, Mayport, FL 32228",30.390625,-81.4375,Sandwich shopCatererFast food restaurantTakeout RestaurantRestaurant,0,3,92
