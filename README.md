@@ -4,7 +4,7 @@
 
 # <h1 align=center> Consultora de Data: UpData
 
-<img src=![ITakeU_Logo_1](https://user-images.githubusercontent.com/109157476/219418155-49c3dac4-3b62-421e-ae0f-13a0937fa2f0.jpg)>
+<img src= https://user-images.githubusercontent.com/109157476/219507085-80728bfe-cd9c-42b1-95a1-3f016dbb38cf.png>
 
 ## <h1 align=center> Proyecto en Ejecución.
 
