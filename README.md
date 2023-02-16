@@ -6,7 +6,7 @@
 
 <img src= https://user-images.githubusercontent.com/109157476/219507085-80728bfe-cd9c-42b1-95a1-3f016dbb38cf.png>
 
-## <h1 align=center> Proyecto en Ejecución.
+## <h1 align=center> Proyecto en Ejecución...
 
 Primer Dataset generado: metadata-sitios.parquet
 
@@ -27,6 +27,5 @@ Cada archivo del Dataset ‘metadata-sitios’ contiene los siguientes campos:
 
 <img src= https://user-images.githubusercontent.com/109157476/219510256-99294f20-053f-461c-8556-e5e821439d53.png> 
   
-### <h1 align=center> DATA WAREHOUSE
-  
+ 
 <img src= https://user-images.githubusercontent.com/109157476/219508202-8a11f9d9-3121-462e-ba24-4d6aa6eb117f.png>
