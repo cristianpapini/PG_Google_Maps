@@ -11,3 +11,5 @@
 Primer Dataset generado: metadata-sitios.parquet
 
 https://drive.google.com/file/d/19UP_Ab3Pw29IU0u5Oj-EyrpHBdqBXi3z/view?usp=sharing
+  
+Video Explicativo Proceso de ETL en Amazon AWS: https://www.youtube.com/watch?v=irX-6nPQTjI
