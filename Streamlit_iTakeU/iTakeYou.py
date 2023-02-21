@@ -75,22 +75,31 @@ st.markdown ('***')
 st.markdown("<h2 style='text-align: center; color: blue;'>Estadísticas </h2>", unsafe_allow_html=True)
 
 st.write(f"**<h5 style='text-align: center; '>Cantidad de Sitios Activos e Inactivos en {ciudad}, por la Categoría {categoria} </h5>**", unsafe_allow_html=True)
-grafico = st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
+st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
 
 # Gráficos
-# Barras
-df_condicion_sitios = df_categoria.groupby('Condición_Establecimiento').City.count()
+# Sitios Activos e Inactivos por Ciudad y Categoría
+df_condicion_sitios_categoria = df_categoria.groupby('Condición_Establecimiento').City.count()
 bar_fig = plt.figure(figsize=(8,7))
 bar_ax = bar_fig.add_subplot(111)
-df_condicion_sitios.plot.bar(alpha=0.8, ax=bar_ax)
+df_condicion_sitios_categoria.plot.bar(alpha=0.8, ax=bar_ax)
 
-# Cake
-
-
-
-#container1 = st.container()
-
-#with container1:
-#    bar_fig
-
+# Otro gráfico de barras
 bar_fig
+
+st.markdown ('***')
+
+st.write(f"**<h5 style='text-align: center; '>Cantidad de Sitios Activos e Inactivos en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
+
+# Sitios Activos e Inactivos por Ciudad
+# df_condicion_sitios_ciudad = df_ciudad.groupby('Condición_Establecimiento').City.count()
+st.bar_chart (df_ciudad['Condición_Establecimiento'].value_counts())
+
+st.markdown ('***')
+
+# Cantidad de Sitios por Ciudad y Categoría
+df_sitios_ciudad_categoria = df_ciudad.groupby('category').value_counts()
+pie_fig, ax = plt.subplots()
+ax.pie (df_sitios_ciudad_categoria)
+plt.show
+
