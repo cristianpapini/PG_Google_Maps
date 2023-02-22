@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from PIL import Image
 from millify import millify
 
@@ -12,8 +13,8 @@ imagen = Image.open('ITakeU_Logo_1.jpg')
 st.image(imagen, width=400)
 
 st.sidebar.image (imagen, width=200)
-#st.sidebar.markdown ('# **iTakeYou**')
-st.sidebar.markdown ('### La web para encontrar los mejores lugares para comer!')
+st.sidebar.markdown ('# **iTakeYou**')
+st.sidebar.markdown ('### La Web para encontrar los mejores lugares para Comer e Invertir!')
 st.sidebar.markdown ('***')
 
 st.markdown ('***')
@@ -28,9 +29,12 @@ if (poblacion.shape[0] != 0):
     poblacion = poblacion.iloc[0][2]
     st.sidebar.metric (label=f'**Población en: {ciudad}**', value=millify(poblacion))
     st.sidebar.markdown ('***')
-    st.sidebar.write (f'**Categoría:** {categoria}')
-    cant_rest_categ = df_categoria.shape[0]
-    st.sidebar.metric (label='**Cantidad Lugares en esa Categoría:**', value=cant_rest_categ)
+st.sidebar.write (f'**Categoría:** {categoria}')
+cant_rest_categ = df_categoria.shape[0]
+st.sidebar.metric (label='**Cantidad Lugares en esa Categoría:**', value=cant_rest_categ)
+st.sidebar.markdown ('***')
+cant_rest_ciudad = df_ciudad.shape[0]
+st.sidebar.metric (label=f'**Total de Lugares en: {ciudad}**', value=cant_rest_ciudad)
 
 col1, col2 = st.columns (2)
 
@@ -74,32 +78,32 @@ st.markdown ('***')
 
 st.markdown("<h2 style='text-align: center; color: blue;'>Estadísticas </h2>", unsafe_allow_html=True)
 
+# Gráficos
+
+# Sitios Activos e Inactivos por Ciudad y Categoría
 st.write(f"**<h5 style='text-align: center; '>Cantidad de Sitios Activos e Inactivos en {ciudad}, por la Categoría {categoria} </h5>**", unsafe_allow_html=True)
 st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
 
-# Gráficos
-# Sitios Activos e Inactivos por Ciudad y Categoría
 df_condicion_sitios_categoria = df_categoria.groupby('Condición_Establecimiento').City.count()
 bar_fig = plt.figure(figsize=(8,7))
 bar_ax = bar_fig.add_subplot(111)
 df_condicion_sitios_categoria.plot.bar(alpha=0.8, ax=bar_ax)
 
 # Otro gráfico de barras
-bar_fig
+#st.pyplot (bar_fig)
 
 st.markdown ('***')
 
 st.write(f"**<h5 style='text-align: center; '>Cantidad de Sitios Activos e Inactivos en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
 
 # Sitios Activos e Inactivos por Ciudad
-# df_condicion_sitios_ciudad = df_ciudad.groupby('Condición_Establecimiento').City.count()
 st.bar_chart (df_ciudad['Condición_Establecimiento'].value_counts())
 
 st.markdown ('***')
 
-# Cantidad de Sitios por Ciudad y Categoría
-df_sitios_ciudad_categoria = df_ciudad.groupby('category').value_counts()
-pie_fig, ax = plt.subplots()
-ax.pie (df_sitios_ciudad_categoria)
-plt.show
-
+# Cantidad de Lugares Activos por Ciudad y todas sus Categorías
+#df_sitios_ciudad_categoria = df_ciudad.groupby('category').category.count()
+#pie_fig, pie_ax = plt.subplots()
+#pie_ax.pie (df_sitios_ciudad_categoria)
+#pie_ax.axis('equal')
+#st.pyplot (pie_fig)
