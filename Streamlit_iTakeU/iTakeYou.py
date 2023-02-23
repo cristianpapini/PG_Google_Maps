@@ -92,8 +92,8 @@ st.markdown("<h2 style='text-align: center; color: blue;'>Estadísticas </h2>", 
 
 # Gráficos
 
-# Sitios Activos e Inactivos por Ciudad y Categoría. Gráfico de Barras
-st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos e Inactivos en {ciudad}, por la Categoría {categoria} </h5>**", unsafe_allow_html=True)
+# Sitios Activos y Permanentemente Cerrados por Ciudad y Categoría. Gráfico de Barras
+st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos y Permanentemente Cerrados en {ciudad}, por la Categoría {categoria} </h5>**", unsafe_allow_html=True)
 st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
 
 # Otro gráfico de barras
@@ -105,8 +105,8 @@ st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
 
 st.markdown ('***')
 
-# Sitios Activos e Inactivos por Ciudad. Gráfico de Barras
-st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos e Inactivos en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
+# Sitios Activos y Permanentemente Cerrados por Ciudad. Gráfico de Barras
+st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos y Permanentemente Cerrados en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
 st.bar_chart (df_ciudad['Condición_Establecimiento'].value_counts())
 
 st.markdown ('***')
