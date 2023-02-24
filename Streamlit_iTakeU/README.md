@@ -9,7 +9,7 @@ Ya que se realizó un deploy en **AWS Cloud** a través del Servicio **EC2**, se
 El proceso de ETL en las tablas para prepararlas para la construcción de la Web se encuentra en el Notebook de Jupyter **"ETL iTakeU.ipynb"**.
 
 Tablas utilizadas:
-sitios_Fl_COOR.csv
-sitios_FL_New.csv
-city_population.csv
+sitios_Fl_COOR.csv </p>
+sitios_FL_New.csv </p>
+city_population.csv </p>
 review_FL.csv
