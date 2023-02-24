@@ -8,10 +8,14 @@ from millify import millify
 
 df_lugares = pd.read_csv ('sitios_FL_New.csv')
 df_poblacion = pd.read_csv ('city_population.csv')
+df_reviews = pd.read_csv ('review_FL.csv')
+
+df_reviews.rename (columns={'name':'Nombre', 'text':'Reseña', 'date':'Fecha'}, inplace=True)
 
 imagen = Image.open('ITakeU_Logo_1.jpg')
 st.image(imagen, width=400)
 
+# Información de la barra lateral izquierda
 st.sidebar.image (imagen, width=200)
 st.sidebar.markdown ('# **iTakeYou**')
 st.sidebar.markdown ('### La Web para encontrar los mejores lugares para Comer e Invertir!')
@@ -19,11 +23,13 @@ st.sidebar.markdown ('***')
 
 st.markdown ('***')
 
+# Seleccionar Ciudad y Categoría a consultar
 ciudad = st.selectbox ('**Seleccione la Ciudad**', (df_lugares['City'].unique()))
 df_ciudad = df_lugares [df_lugares ['City'] == ciudad]
 categoria = st.selectbox ('**Seleccione la Categoría**', (df_ciudad['category'].unique()))
 df_categoria = df_ciudad [df_ciudad ['category'] == categoria]
 
+# Datos informativos en la barra lateral izquierda
 poblacion = df_poblacion[df_poblacion['City'] == ciudad]
 if (poblacion.shape[0] != 0):
     poblacion = poblacion.iloc[0][2]
@@ -38,9 +44,11 @@ st.sidebar.metric (label=f'**Total de Lugares en: {ciudad}**', value=cant_rest_c
 
 col1, col2 = st.columns (2)
 
+# Mapa
 with col1:
     st.map (df_categoria)
 
+# Top 10
 with col2:
     st.markdown("<h2 style='text-align: center; color: red;'>Top 10 </h2>", unsafe_allow_html=True)
     df_top_10 = df_categoria[['Nombre', 'Zip','Reviews','Rating']].sort_values('Rating', ascending=False).head(10)
@@ -55,6 +63,7 @@ with col2:
 
 st.markdown ('***')
 
+# Selección del Lugar y el Código Postal
 nombre = st.selectbox('Seleccione un Lugar', (df_categoria['Nombre'].unique()))
 df_nombre = df_categoria[df_categoria['Nombre'] == nombre]
 
@@ -67,6 +76,7 @@ st.markdown("<h3 style='text-align: center; color: red;'>Información de Interé
 
 col3, col4 = st.columns (2)
 
+# Información más detallada del Lugar
 with col3:
     st.write('**Nombre:**', nombre)
     st.write('**Rango de Precio:**', df_zip['price'].iloc[0])
@@ -86,32 +96,64 @@ with col4:
     df_precio = pd.DataFrame (dicc_precio)
     st.table (df_precio)
 
-st.markdown ('***')
+df_union = pd.merge (df_reviews, df_zip)
 
-st.markdown("<h2 style='text-align: center; color: blue;'>Estadísticas </h2>", unsafe_allow_html=True)
+# Reviews de los usuarios
+st.write('**Comentarios:**')
+df_text = df_union[['Reseña', 'rating', 'Fecha']]
+df_text.dropna (inplace=True)
+df_text.drop_duplicates (inplace=True)
+st.dataframe (df_text.sort_values('Fecha', ascending=False, ignore_index=True))
+
+st.markdown ('***')
 
 # Gráficos
 
-# Sitios Activos y Permanentemente Cerrados por Ciudad y Categoría. Gráfico de Barras
+# Evolución de los Ratings por Años
+st.write(f"**<h5 style='text-align: center; '>Evolución de los Ratings en {nombre}, por Años </h5>**", unsafe_allow_html=True)
+df_rating_fecha = df_union [['rating', 'Fecha']]
+df_rating_fecha.dropna (inplace=True)
+df_rating_fecha.drop_duplicates (inplace=True)
+df_rating_fecha = df_rating_fecha.sort_values(by=['Fecha'], ignore_index=True)
+df_anio = df_rating_fecha['Fecha']
+df_anio= df_anio.str.split("-", n=1).str[0]
+x = df_anio
+y = df_rating_fecha ['rating'] 
+fig_line, ax_line = plt.subplots()
+ax_line.set_xlabel('Años')
+ax_line.set_ylabel('Ratings')
+ax_line.fill_between(x = x, y1 = y, color='purple')
+st.pyplot (fig_line)
+
+st.markdown ('***')
+
+st.markdown("<h2 style='text-align: center; color: blue;'>Más Estadísticas </h2>", unsafe_allow_html=True)
+
+# Lugares Activos y Permanentemente Cerrados por Ciudad y Categoría
 st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos y Permanentemente Cerrados en {ciudad}, por la Categoría {categoria} </h5>**", unsafe_allow_html=True)
-st.bar_chart (df_categoria['Condición_Establecimiento'].value_counts())
-
-# Otro gráfico de barras
-#df_condicion_sitios_categoria = df_categoria.groupby('Condición_Establecimiento').City.count()
-#bar_fig = plt.figure(figsize=(8,7))
-#bar_ax = bar_fig.add_subplot(111)
-#df_condicion_sitios_categoria.plot.bar(alpha=0.8, ax=bar_ax)
-#st.pyplot (bar_fig)
+df_condicion_sitios_categoria = df_categoria.groupby('Condición_Establecimiento').City.count()
+barh_fig = plt.figure(figsize=(8,7))
+barh_ax = barh_fig.add_subplot(111)
+barh_ax.set_xlabel('Cantidad de lugares')
+barh_ax.set_ylabel('Condición del Lugar')
+df_condicion_sitios_categoria.plot.barh(alpha=0.8, ax=barh_ax)
+st.pyplot (barh_fig)
 
 st.markdown ('***')
 
-# Sitios Activos y Permanentemente Cerrados por Ciudad. Gráfico de Barras
+# Lugares Activos y Permanentemente Cerrados por Ciudad. Gráfico de Barras
 st.write(f"**<h5 style='text-align: center; '>Cantidad de Lugares Activos y Permanentemente Cerrados en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
-st.bar_chart (df_ciudad['Condición_Establecimiento'].value_counts())
+df_condicion_sitios_ciudad = df_ciudad['Condición_Establecimiento'].value_counts()
+bar_fig = plt.figure(figsize=(8,7))
+bar_ax = bar_fig.add_subplot(111)
+bar_ax.set_xlabel('Fecha')
+bar_ax.set_ylabel('Condición del Lugar')
+df_condicion_sitios_ciudad.plot.barh(alpha=0.8, ax=bar_ax, color='orange')
+st.pyplot (bar_fig)
 
 st.markdown ('***')
 
-# Porcentaje de Lugares Activos por Ciudad y todas sus Categorías. Gráfico de Pie
+# Porcentaje de Lugares Activos por Ciudad y todas sus Categorías
 st.write(f"**<h5 style='text-align: center; '>Porcentaje de Lugares Activos en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
 df_sitios_activo_ciudad_categoria = df_ciudad[df_ciudad['Condición_Establecimiento'] == 'Activo']
 
@@ -135,7 +177,7 @@ else:
 
 st.markdown ('***')
    
-# Porcentaje de Lugares Activos en el Estado de la Florida y todas sus Categorías. Gráfico de Pie
+# Porcentaje de Lugares Activos en el Estado de la Florida y todas sus Categorías
 st.write(f"**<h5 style='text-align: center; '>Porcentaje de Lugares Activos en el Estado de la FLorida. Todas las Categorías </h5>**", unsafe_allow_html=True)
 df_sitios_activo_estado = df_lugares[df_lugares['Condición_Establecimiento'] == 'Activo']
 df_sitios_activo_estado = df_sitios_activo_estado.groupby('category').category.count()
@@ -148,7 +190,11 @@ st.pyplot (pie_fig_est)
 
 st.markdown ('***')
 
+# Ratings de los Lugares en una determinada Ciudad en todas las Categorías
 st.write(f"**<h5 style='text-align: center; '>Ratings de los Lugares en {ciudad}. Todas las Categorías </h5>**", unsafe_allow_html=True)
 df_rating_categoria = df_ciudad[['Rating','category']]
 df_rating_categoria = df_rating_categoria.groupby(['Rating']).count()
-st.bar_chart(df_rating_categoria)
+bar_fig = plt.figure(figsize=(8,7))
+bar_ax = bar_fig.add_subplot(111)
+df_rating_categoria.plot.bar(alpha=0.8, ax=bar_ax, color='green')
+st.pyplot (bar_fig)
