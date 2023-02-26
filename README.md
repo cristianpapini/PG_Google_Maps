@@ -9,6 +9,8 @@
 ## <h1 align=center> Proyecto en Ejecución...
 
 Video Explicativo Proceso de ETL en Amazon AWS: https://www.youtube.com/watch?v=irX-6nPQTjI
+  
+Video Mostrando el Proceso de Implementación del Proceso de ETL en AWS Cloud - Vista Rápida: https://www.youtube.com/watch?v=3-nzZq9ZcF8
 
 ### <h1 align=center> DATASETS Y DICCIONARIO DE DATOS
 
