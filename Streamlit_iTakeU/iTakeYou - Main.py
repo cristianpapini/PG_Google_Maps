@@ -96,7 +96,7 @@ st.write('**Comentarios:**')
 df_text = df_union[['Reseña', 'rating', 'Fecha']]
 df_text.dropna (inplace=True)
 df_text.drop_duplicates (inplace=True)
-st.dataframe (df_text.sort_values('Fecha', ascending=False, ignore_index=True))
+st.dataframe (df_text.sort_values('Fecha', ascending=False, ignore_index=True), 800)
 
 st.markdown ('***')
 
