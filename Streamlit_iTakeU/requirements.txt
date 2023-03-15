@@ -1,6 +1,0 @@
-﻿matplotlib
-millify
-numpy
-pandas
-Pillow
-streamlit
