@@ -5,8 +5,8 @@ import numpy as np
 from PIL import Image
 
 
-df_lugares = pd.read_csv ('sitios_FL_New.csv')
-df_reviews = pd.read_csv ('review_FL.csv')
+df_lugares = pd.read_csv ('./Streamlit_iTakeU/sitios_FL_New.csv')
+df_reviews = pd.read_csv ('./Streamlit_iTakeU/review_FL.csv')
 
 df_reviews.dropna(subset=['date'], inplace=True)
 df_reviews.rename (columns={'name':'Nombre', 'text':'Reseña', 'date':'Fecha'}, inplace=True)
