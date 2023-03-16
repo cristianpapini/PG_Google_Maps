@@ -5,15 +5,15 @@ import numpy as np
 from PIL import Image
 from millify import millify
 
-df_lugares = pd.read_csv ('sitios_FL_New.csv')
-df_poblacion = pd.read_csv ('city_population.csv')
+df_lugares = pd.read_csv ('./Streamlit_iTakeU/sitios_FL_New.csv')
+df_poblacion = pd.read_csv ('./Streamlit_iTakeU/city_population.csv')
 
 # Logo
 col1, col2, col3 = st.columns(3)
 with col1:
     st.write(' ')
 with col2:
-    imagen = Image.open('ITakeU_Logo_1.jpg')
+    imagen = Image.open('./Streamlit_iTakeU/ITakeU_Logo_1.jpg')
     st.image(imagen, width=400)
 with col3:
     st.write(' ')
