@@ -4,7 +4,7 @@ El presente producto Web fue elaborado con **Streamlit**.
 
 Se puede correr de forma local por el archivo **iTakeYou.py**, a través de ejecutar en la línea de comandos de un Terminal **"streamlit run iTakeYou.py"**.
 
-Ya que se realizó un deploy en **AWS Cloud** a través del Servicio **EC2**, se puede ejecutar también a través del siguiente link: http://52.7.191.115:8501/
+Ya que se realizó un deploy en la **Community Cloud** de Streamlit, se puede ejecutar también a través del siguiente link: https://itakeu.streamlit.app/
 
 El proceso de ETL en las tablas para prepararlas para la construcción de la Web se encuentra en el Notebook de Jupyter **"ETL iTakeU.ipynb"**.
 
